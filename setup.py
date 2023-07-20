@@ -33,6 +33,7 @@ setup(
 		'Application Framework :: Liquirizia :: EventBroker',
 	],
 	install_requires=[
+		'Liquirizia@git+https://github.com/yong5eon/Liquirizia.git',
 	],
 	python_requires='>=3.8'
 )
