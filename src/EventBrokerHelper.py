@@ -16,7 +16,7 @@ class EventBrokerHelper(Singleton):
 	Event Broker Helper Class
 	"""
 
-	def onInit(self):
+	def __init__(self):
 		self.brokers = {}
 		return
 

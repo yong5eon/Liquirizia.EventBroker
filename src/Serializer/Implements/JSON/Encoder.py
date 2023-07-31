@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from collections import MutableSequence, MutableMapping, MutableSet
+from collections.abc import MutableSequence, MutableMapping, MutableSet
 from datetime import datetime, date
 from decimal import Decimal
 from json import dumps, JSONEncoder

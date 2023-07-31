@@ -8,9 +8,8 @@ __all__ = (
 
 
 class Error(BaseException):
-	"""
-	Error for Event Broker
-	"""
+	"""Error for Event Broker"""
+
 	def __init__(self, reason, error=None):
 		super(Error, self).__init__(reason)
 		self.reason = reason

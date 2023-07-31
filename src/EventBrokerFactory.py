@@ -9,9 +9,7 @@ __all__ = (
 
 
 class EventBrokerFactory(object):
-	"""
-	Event Broker Factory Class
-	"""
+	"""Event Broker Factory Class"""
 
 	def __init__(self, object: type(Connection), conf: Configuration, persistent: bool = False):
 		self.object = object
