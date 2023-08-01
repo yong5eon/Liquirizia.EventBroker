@@ -135,13 +135,13 @@ class EventBrokerHelper(Singleton):
 		)
 
 	@classmethod
-	def Recv(cls, key, queue, timeout: int = None):
+	def Receive(cls, key, queue, timeout: int = None):
 		helper = cls()
-		return helper.recv(key, queue, timeout)
+		return helper.receive(key, queue, timeout)
 
-	def recv(self, key, queue, timeout: int = None):
+	def receive(self, key, queue, timeout: int = None):
 		broker = self.get(key)
 		if not broker:
 			return
 		channel = broker.queue(queue)
-		return channel.recv(timeout)
+		return channel.receive(timeout)

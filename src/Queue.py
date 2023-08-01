@@ -39,7 +39,7 @@ class Queue(ABC):
 		raise NotImplementedError('{} must be implemented qos'.format(self.__class__.__name__))
 
 	@abstractmethod
-	def recv(self, timeout: int = None):
+	def receive(self, timeout: int = None):
 		raise NotImplementedError('{} must be implemented recv'.format(self.__class__.__name__))
 
 	@abstractmethod
