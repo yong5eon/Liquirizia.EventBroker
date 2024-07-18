@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 PKG = 'Liquirizia.EventBroker'
 SRC = 'src'
 EXCLUDES = []
-DESC = 'Event Broker of Python Modernized Application Framework Liquirizia'
+DESC = 'Event Broker Interfaces and Helper of Liquirizia'
 WHO = 'Heo Yongseon'
 
 PKGS = [PKG]
@@ -29,8 +29,8 @@ setup(
 		'Programming Language :: Python :: 3.9',
 		'Programming Language :: Python :: 3.10',
 		'Programming Language :: Python :: 3.11',
-		'Application Framework :: Liquirizia',
-		'Application Framework :: Liquirizia :: EventBroker',
+		'Liquirizia',
+		'Liquirizia :: EventBroker',
 	],
 	install_requires=[
 		'Liquirizia@git+https://github.com/yong5eon/Liquirizia.git',
