@@ -3,6 +3,8 @@
 from .Configuration import Configuration
 from .Connection import Connection
 
+from typing import Type
+
 __all__ = (
 	'EventBrokerFactory'
 )
@@ -11,7 +13,7 @@ __all__ = (
 class EventBrokerFactory(object):
 	"""Event Broker Factory Class"""
 
-	def __init__(self, object: type(Connection), conf: Configuration, persistent: bool = False):
+	def __init__(self, object: Type[Connection], conf: Configuration, persistent: bool = False):
 		self.object = object
 		self.conf = conf
 		self.connection = None

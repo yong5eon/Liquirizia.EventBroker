@@ -6,6 +6,8 @@ from .EventBrokerFactory import EventBrokerFactory
 from .Configuration import Configuration
 from .Connection import Connection
 
+from typing import Type
+
 __all__ = (
 	'EventBrokerHelper'
 )
@@ -21,11 +23,11 @@ class EventBrokerHelper(Singleton):
 		return
 
 	@classmethod
-	def Set(cls, key, object: type(Connection),  conf: Configuration, persistent: bool = False):
+	def Set(cls, key, object: Type[Connection],  conf: Configuration, persistent: bool = False):
 		helper = cls()
 		return helper.set(key, object, conf, persistent)
 
-	def set(self, key, object: type(Connection), conf: Configuration, persistent: bool = False):
+	def set(self, key, object: Type[Connection], conf: Configuration, persistent: bool = False):
 		self.brokers[key] = EventBrokerFactory(object, conf, persistent)
 		return
 
