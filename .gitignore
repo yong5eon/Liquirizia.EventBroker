@@ -69,3 +69,6 @@ tmp
 *.txt.*
 *.txt
 *.TXT.*
+
+# Liquirizia Symlinks
+src/Implements/RabbitMQ
