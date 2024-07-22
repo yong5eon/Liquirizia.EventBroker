@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from .Callback import Callback
+from .EventHandler import EventHandler
 
 from abc import ABC, abstractmethod
 
@@ -25,7 +25,7 @@ class Connection(ABC):
 		raise NotImplemented('{} must be implemented queue'.format(self.__class__.__name__))
 
 	@abstractmethod
-	def consumer(self, callback: Callback, count: int = 1):
+	def consumer(self, handler: EventHandler, count: int = 1):
 		raise NotImplemented('{} must be implemented consumer'.format(self.__class__.__name__))
 
 	@abstractmethod

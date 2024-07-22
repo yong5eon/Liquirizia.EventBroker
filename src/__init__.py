@@ -7,7 +7,7 @@ from .Connection import Connection
 from .Topic import Topic
 from .Queue import Queue
 from .Consumer import Consumer
-from .Callback import Callback
+from .EventHandler import EventHandler
 from .Event import Event
 from .Response import Response
 from .Error import Error
@@ -19,7 +19,7 @@ __all__ = (
 	'Topic',
 	'Queue',
 	'Consumer',
-	'Callback',
+	'EventHandler',
 	'Event',
 	'Response',
 	'Error',

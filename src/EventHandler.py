@@ -9,8 +9,8 @@ __all__ = (
 )
 
 
-class Callback(ABC):
-	"""Callback Interface of Event Broker"""
+class EventHandler(ABC):
+	"""Event Handler Interface of Event Broker"""
 
 	@abstractmethod
 	def __call__(self, event: Event):
