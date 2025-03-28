@@ -13,8 +13,8 @@ __all__ = (
 class Factory(object):
 	"""Factory Class for Event Broker"""
 
-	def __init__(self, object: Type[Connection], conf: Configuration):
-		self.object = object
+	def __init__(self, o: Type[Connection], conf: Configuration):
+		self.object = o
 		self.conf = conf
 		return
 
