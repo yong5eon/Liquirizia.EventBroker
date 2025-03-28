@@ -21,23 +21,24 @@ class Connection(metaclass=ABCMeta):
 	def close(self):
 		raise NotImplementedError('{} must be implemented close'.format(self.__class__.__name__))
 
+
 class GetExchange(metaclass=ABCMeta):
 	"""GetExchange Interface for Connection of Event Broker"""
 	@abstractmethod
 	def exchange(self, name: str, **kwargs):
-		raise NotImplemented('{} must be implemented exchange'.format(self.__class__.__name__))
+		raise NotImplementedError('{} must be implemented exchange'.format(self.__class__.__name__))
 
 
 class GetQueue(metaclass=ABCMeta):
 	"""GetQueue Interface for Connection of Event Broker"""
 	@abstractmethod
 	def queue(self, name: str, **kwargs):
-		raise NotImplemented('{} must be implemented queue'.format(self.__class__.__name__))
+		raise NotImplementedError('{} must be implemented queue'.format(self.__class__.__name__))
 
 
 class GetConsumer(metaclass=ABCMeta):
 	"""GetConsumer Interface for Connection of Event Broker"""
 	@abstractmethod
 	def consumer(self, handler: EventHandler, **kwargs):
-		raise NotImplemented('{} must be implemented consumer'.format(self.__class__.__name__))
+		raise NotImplementedError('{} must be implemented consumer'.format(self.__class__.__name__))
 
