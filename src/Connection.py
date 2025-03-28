@@ -16,11 +16,10 @@ class Connection(metaclass=ABCMeta):
 	"""Connection Interface of Event Broker"""
 	@abstractmethod
 	def connect(self):
-		raise NotImplemented('{} must be implemented connect'.format(self.__class__.__name__))
+		raise NotImplementedError('{} must be implemented connect'.format(self.__class__.__name__))
 	@abstractmethod
 	def close(self):
-		raise NotImplemented('{} must be implemented close'.format(self.__class__.__name__))
-
+		raise NotImplementedError('{} must be implemented close'.format(self.__class__.__name__))
 
 class GetExchange(metaclass=ABCMeta):
 	"""GetExchange Interface for Connection of Event Broker"""
