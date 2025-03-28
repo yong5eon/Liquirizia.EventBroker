@@ -22,19 +22,19 @@ class Helper(Singleton):
 		self.brokers = {}
 		return
 
-	def set(self, key: str, object: Type[Connection], conf: Configuration):
-		self.brokers[key] = Factory(object, conf)
+	def set(self, key: str, o: Type[Connection], conf: Configuration):
+		self.brokers[key] = Factory(o, conf)
 		return
 
 	@classmethod
-	def Set(cls, key: str, object: Type[Connection],  conf: Configuration):
+	def Set(cls, key: str, o: Type[Connection],  conf: Configuration):
 		helper = cls()
-		return helper.set(key, object, conf)
+		return helper.set(key, o, conf)
 
 	def get(self, key: str) -> Connection:
 		if key not in self.brokers:
 			return None
-		broker = self.brokers[key]
+		broker: Connection = self.brokers[key]
 		return broker.connect()
 
 	@classmethod
