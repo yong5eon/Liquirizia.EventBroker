@@ -7,12 +7,14 @@ from .Connection import (
 	Connection,
 	GetExchange,
 	GetQueue,
+	GetStream,
 	GetConsumer,
 )
 from .Exchange import Exchange
 from .Queue import (
 	Queue,
-	Gettable,
+	Poppable,
+	Stream,
 	Readable,
 )
 from .Consumer import Consumer
@@ -24,10 +26,13 @@ __all__ = (
 	'Connection',
 	'GetExchange',
 	'GetQueue',
+	'GetStream',
 	'GetConsumer',
 	'Exchange',
 	'Queue',
+	'Poppable',
+	'Stream',
+	'Readable',
 	'Consumer',
 	'EventHandler',
 )
-

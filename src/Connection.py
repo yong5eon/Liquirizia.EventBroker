@@ -8,6 +8,7 @@ __all__ = (
 	'Connection',
 	'GetExchange',
 	'GetQueue',
+	'GetStream',
 	'GetConsumer',
 )
 
@@ -36,9 +37,17 @@ class GetQueue(metaclass=ABCMeta):
 		raise NotImplementedError('{} must be implemented queue'.format(self.__class__.__name__))
 
 
+class GetStream(metaclass=ABCMeta):
+	"""GetStream Interface for Connection of Event Broker"""
+	@abstractmethod
+	def stream(self, name: str, **kwargs):
+		raise NotImplementedError('{} must be implemented stream'.format(self.__class__.__name__))
+
+
 class GetConsumer(metaclass=ABCMeta):
 	"""GetConsumer Interface for Connection of Event Broker"""
 	@abstractmethod
 	def consumer(self, handler: EventHandler, **kwargs):
 		raise NotImplementedError('{} must be implemented consumer'.format(self.__class__.__name__))
+
 
