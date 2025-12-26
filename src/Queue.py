@@ -6,7 +6,7 @@ from typing import Iterable, Any
 __all__ = (
 	'Queue',
 	'Stream',
-	'Gettable',
+	'Poppable',
 	'Readable',
 )
 
