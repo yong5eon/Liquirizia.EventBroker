@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
 from abc import ABCMeta, abstractmethod
-
-from typing import Optional
+from typing import Iterable, Any
 
 __all__ = (
 	'Queue',
-	'Gettable',
+	'Stream',
+	'Poppable',
 	'Readable',
 )
 
@@ -16,18 +16,24 @@ class Queue(metaclass=ABCMeta):
 	@abstractmethod
 	def send(self, **kwargs):
 		raise NotImplementedError('{} must be implemented send'.format(self.__class__.__name__))
+	
 
-
-class Gettable(metaclass=ABCMeta):
-	"""Gettable Interface for Queue of Event Broker"""
+class Stream(metaclass=ABCMeta):
+	"""Stream Interface for Event Broker"""
 	@abstractmethod
-	def get(self, timeout: int = None):
-		raise NotImplementedError('{} must be implemented get'.format(self.__class__.__name__))
+	def send(self, **kwargs):
+		raise NotImplementedError('{} must be implemented send'.format(self.__class__.__name__))
+
+
+class Poppable(metaclass=ABCMeta):
+	"""Poppable Interface for Queue of Event Broker"""
+	@abstractmethod
+	def pop(self, timeout: int = None) -> Any:
+		raise NotImplementedError('{} must be implemented pop'.format(self.__class__.__name__))
 
 
 class Readable(metaclass=ABCMeta):
 	"""Readable Interface for Queue of Event Broker"""
 	@abstractmethod
-	def read(self):
+	def read(self, timeout: int = None) -> Iterable[Any]:
 		raise NotImplementedError('{} must be implemented read'.format(self.__class__.__name__))
-
